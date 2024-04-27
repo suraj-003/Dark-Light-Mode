@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-Light Mode</title>
+    <style>
+        .theme-icon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer ;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .active{
+            border: 1px solid black;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="effect">
+    <img src="/day-mode.png" class="theme-icon active" onclick="LightTheme()" id="light">
+   
+    <img src="/moon.png" class="theme-icon" onclick="NightTheme()" id="night">
+
+    <h1 id="head">Dark / Light Theme Changer</h1>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quia molestias repudiandae amet dolorem eligendi eius magni libero veritatis aliquam consectetur, non error voluptatem officiis quisquam doloribus placeat earum vero delectus pariatur reiciendis! Nesciunt accusamus, molestiae dolorem quis aperiam itaque sint iure culpa cumque voluptates, repudiandae dolor, corporis recusandae! Expedita dolorem voluptate reiciendis nesciunt consectetur distinctio animi sequi consequuntur est eius? Mollitia hic voluptates modi amet? Aperiam libero alias possimus, repudiandae repellendus molestiae recusandae officia fuga autem corporis quasi expedita velit unde dolor adipisci maxime reprehenderit quia ad distinctio et ducimus voluptas quis. Iste sint quae excepturi reprehenderit, est dolores?</p>
+
+    <script>
+        function LightTheme() {
+          const Light=document.getElementById("light")
+          Light.classList.add("active")
+          Light.style.background=" white"
+         
+          const back=document.getElementById("effect")
+         
+          back.style.background="orange"
+        //   head.style.color="black";
+        //   para.style.color="black"
+         
+
+          const Night =document.getElementById("night") 
+          Night.classList.remove("active")
+
+        }
+
+        function NightTheme() {
+            const Light=document.getElementById("light")
+          Light.classList.remove("active")
+
+          const back=document.getElementById("effect") 
+          const head=document.getElementById("head")
+          const para=document.getElementById("para")
+          back.style.background="black"
+          head.style.color="white";
+          para.style.color="white";
+          
+
+          const Night =document.getElementById("night") 
+          Night.classList.add("active")
+          Night.style.background=" white"
+
+          
+        }
+
+    </script>
+</body>
+</html>
