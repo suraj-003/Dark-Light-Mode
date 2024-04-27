@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards </title>
+    <style>
+
+      
+        
+        .card {
+            width:303px;
+            border: 2px solid black;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left:600px;
+            height: 600px;
+            
+            
+            display: inline-block; 
+        }
+
+        
+        .h2 {
+            
+            color: black;
+            background-color: lightgrey;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid gray;
+            margin-top: -50px;
+            border-radius: 3px;
+            
+        }
+
+        
+        .img {
+            width: 100%;
+            height: 230px;
+            width: 200px;
+            margin-left: 50px;
+        }
+
+        
+        .head {
+            padding: 5px;
+            margin: 10px;
+            color: darkgoldenrod;
+        }
+        .brand-1{
+            padding-top: 10px;
+            
+            border-radius: 
+            
+        }
+       .des{
+        padding-right: 5px;
+        padding-left: 30px;
+        
+       }
+       .btn{
+        margin-top: 25px;
+        margin-left: 60px;
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 5px 25px 5px 25px;
+        border-radius: 5px;
+       }
+       
+       .font{
+        font-size: 20px;
+       }
+       .buy{
+    
+        margin-top: 15px;
+        margin-left: 80px;
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 5px 25px 5px 25px;
+        border-radius: 5px;
+       }
+       .incerment{
+        width: 100px;
+        height: 30px;
+        margin-left: 8px;
+       }
+       h1{
+        text-align: center;
+       }
+       .incre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -40px;
+       }
+      .number{
+        font-size: 25px;
+        margin: auto 22px;
+      }
+      .add{
+        cursor: pointer;
+      }
+       
+    </style>
+</head>
+<body>
+    <h1>Bags</h1>
+
+    
+
+    <div class="card">
+        <!-- <h2 class="h2">Victus</h2> -->
+        <img class="brand-1 img" src="image.png" alt="Product B Image">
+        <p class="head">Smart Fingerlock Bagpack 
+
+            <ul class="des">
+                <li>Fingerprint Zip-Lock
+
+
+                </li>
+                <li>Unlocks within 0.1 second
+                </li>
+                <li>Simple Management: Easily add or delete fingerprints
+
+
+               <br>
+                 <br>
+
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <b class="font" >  ₹ 1999/- </b>
+                <br> 
+                <p id="Totalamt">Total: 1999</p> 
+                 
+
+                 <div class="incre">
+                    <img class="add" src="minus.png" onclick="dec()" alt="" height="20px">
+                     <span class="number" id="quantity">1</span>
+                     <img class="add" src="plus.png" onclick="inc()" alt="" height="20px">
+                   </div>
+                   
+                 <!-- &nbsp;&nbsp;&nbsp;M.R.P:<del> 12299/-</del>  -->
+               
+            
+                <button class="btn">Add to Cart</button> <br>
+                <button class="buy"> Buy</button>
+            </ul>
+        </p>
+        
+    </div>
+
+   
+    <script>
+        function inc() {
+            const num=document.getElementById("quantity")
+            const Totalamt=document.getElementById("Totalamt")
+           let quantity=parseInt(num.innerText)
+           if (quantity<10) {
+            
+           
+           num.innerText=++quantity;
+           }
+           else{
+            alert("you cant add more than 10")
+           }
+           
+           
+           Totalamt.innerText=`Total:${quantity*1999} /-`
+
+        }
+
+        function dec() {
+           const num=document.getElementById("quantity")
+           let quantity=parseInt(num.innerText)
+           const Totalamt=document.getElementById("Totalamt")
+
+
+           if(quantity>1)
+           {
+            num.innerText=--quantity
+           }
+           else{
+            alert("you can add less than one")
+           }
+           
+           Totalamt.innerText=`Total:${quantity*1999} /-`        }
+    
+       
+    </script>
+
+</body>
+</html>
+
+
