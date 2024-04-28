@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Dice Roller</title>
+</head>
+<style>
+    body {
+        background-color: #8EC5FC;
+        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+    }
+
+    .div-1 {
+        border: 1px solid black;
+        width: 500px;
+        border-radius: 50px;
+        height: 400px;
+        margin-left: 500px;
+        background-color: lightsalmon;
+    }
+
+    h1 {
+        text-align: center;
+        color: yellow;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 40px;
+    }
+
+    img {
+        height: 150px;
+        padding: 10px 180px;
+        margin-top: 40px;
+    }
+
+    b {
+        margin-left: 243px;
+        font-size: 20px;
+    }
+
+    button {
+        margin-left: 170px;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 20px;
+        background-color: #8EC5FC;
+        border: none;
+        cursor: pointer;
+
+    }
+    @keyframes roll{
+        0%{transform:rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }
+    .animate{
+        animation: roll is infinite;
+    }
+</style>
+
+<body>
+    <h1>Dice Roller</h1>
+    <div class="div-1">
+
+        <img id="diceimg" src="dice-one-solid.svg">
+        <b id="diceno">1</b>
+        <br> <br>
+        <button type="button" id="Roller" onclick="rollDice()">Roll Dice</button>
+    </div>
+
+    <script>
+        function rollDice() {
+            const diceimg=document.getElementById("diceimg");
+            const diceno=document.getElementById("diceno");
+            
+
+            const min=1;
+            const max=6;
+
+            const number=Math.round(Math.random()*(max-min))+min;
+
+            document.getElementById("diceno").innerText=number;
+
+            if (number==1) {
+                diceimg.src="dice-one-solid.svg"
+            }
+            else if (number==2) {
+                diceimg.src="dice-two-solid.svg"
+            }
+            else if (number==3) {
+                diceimg.src="dice-three-solid.svg"
+            }
+            else if (number==4) {
+                diceimg.src="dice-four-solid.svg"
+            }
+            else if (number==5) {
+                diceimg.src="dice-five-solid.svg"
+            }
+            else if (number==6) {
+                diceimg.src="dice-six-solid (1).svg"
+            }
+
+            diceimg.classList.add("animate")
+
+        }
+    </script>
+
+</body>
+
+</html>
