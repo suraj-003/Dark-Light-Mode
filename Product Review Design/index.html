@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<style>
+    .one{
+        height:430px;
+        width: 450px;
+        margin-left: 50px;
+        
+        object-fit: cover;
+        border: 1px solid none;
+        box-shadow: 0 0 5px 1px;
+        border-radius: 25px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    @media screen and (max-width:600px) {
+        .one{
+            width: 400px;
+        }
+    }
+    img{
+        height: 150px;
+        margin-top: 30px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        
+        cursor: pointer;
+        padding: 10px;
+        
+    }
+    .product-images-container{
+        margin-left: 320px;
+        padding: 5px;
+        
+        
+    }
+    @media screen and (max-width:600px) {
+        .product-images-container{
+            margin: 30px;
+        }
+    }
+    .two{
+        margin-left: 280px;
+       
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Product Review</h1>
+    
+    <img class="one" src="one.jpg" id="imgshow" alt=""  >
+
+
+    
+    <div class="product-images-container">
+        
+        
+        <img onclick="changimg(1)"  src="two.jpg" alt="">
+        <img onclick="changimg(2)" src="three.jpg" alt="">
+        <img onclick="changimg(3)" src="fourth.jpg" alt="">
+        <img onclick="changimg(4)" src="five.jpg" alt="">
+        <img onclick="changimg(5)" src="one.jpg" alt="">
+
+    </div>
+
+    <script>
+        function changimg(num) {
+            const one=document.getElementById("imgshow")
+
+            if (num==1) {
+                one.src="two.jpg"
+            }
+            if (num==2) {
+                one.src="three.jpg"
+            }
+            if (num==3) {
+                one.src="fourth.jpg"
+            }
+            if (num==4) {
+                one.src="five.jpg"
+            }
+            if (num==5) {
+                one.src="one.jpg"
+            }
+            
+            
+        }
+
+    </script>
+</body>
+</html>
