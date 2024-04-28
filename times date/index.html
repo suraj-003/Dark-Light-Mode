@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+    }
+
+    .div-1 {
+        height: 370px;
+        color: White;
+        width: 1536px;
+        margin-left: -8px;
+        margin-top: -8px;
+        border: 1px solid none;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+    }
+    h2{
+        color: gold;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 30px;
+    }
+
+    b {
+        margin-left: 38px;
+    }
+
+    .div-2 {
+        border: 1px solid none;
+        
+        border-radius: 15px;
+        height: 400px;
+        width: 600px;
+        margin-left: 470px;
+        margin-top: -180px;
+        display: flex;
+        flex-direction:column;
+        justify-content:start;
+        align-items: center;
+
+        background-color: darkgrey;
+    }
+
+    h2 {
+        margin-left: 10px;
+    }
+
+    input {
+        height: 35px;
+        width: 130px;
+        background-color: #FBAB7E;
+        border: "1px solid red";
+    }
+    button{
+        color: white;
+        background-color: black;
+        height: 40px;
+        width: 150px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        margin-top: 45px;
+    }
+    .div-3{
+        margin-top: 30px;
+        width: auto;
+    }
+</style>
+
+<body>
+
+    <div class="div-1">
+        <h2>Calculate Number Of Days <br><b>Between Two Dates</b> </h3>
+        </h2>
+    </div>
+
+
+    <div class="div-2">
+
+        <div>
+            <h4>Start Date</h4> <input id="first" type="date">
+        </div>
+        <div>
+            <h4>End Date</h4> <input id="sec" type="date">
+        </div>
+        
+        <button type="button" onclick="Time()" id="submit">Submit</button>
+
+        <div id="ans" class="div-3"></div>
+    </div>
+   
+
+    <script>
+       function Time() {
+        const d1=document.getElementById("first").value
+        const d2=document.getElementById("sec").value
+
+        
+        const date1=new Date(d1)
+        const date2=new Date(d2)
+
+    const d=date1.getDate()
+    const d3=date2.getDate()
+
+
+    const m1=date1.getMonth()
+    const m2=date2.getMonth()
+
+    const y1=date1.getFullYear()
+    const y2=date2.getFullYear()
+
+
+
+    const ans=Math.abs(d3-d);
+    const month=Math.abs(m2-m1);
+    const year= Math.abs(y2-y1);
+
+if (d1==d2) {
+    alert("Dates are Sames")
+}    
+        
+
+        // document.getElementById("ans").innerText=`${year} Year ${month} Months ${ans} Days`
+
+        if(ans==0 ){
+        document.getElementById("ans").innerText=`${year} Year ${month} Months`
+        }
+        else if(month==0){
+        document.getElementById("ans").innerText=`${year} Year ${ans} Days`
+        }
+        else if (year==0) {
+            document.getElementById("ans").innerText=`${month} Month ${ans} Days`
+        }
+        
+        else{
+            document.getElementById("ans").innerText= `${year} Year ${month} Months ${ans} Days`
+        }
+        document.getElementById("ans").style.color="black"
+        document.getElementById("ans").style.fontSize="20px"
+        document.getElementById("ans").style.fontWeight="bold"
+        
+       }
+       
+    </script>
+
+</body>
+
+</html>
